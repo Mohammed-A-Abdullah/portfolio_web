@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="/portfolio_web/">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Portfolio Website">
+  
+  <title>Mohamed | Portfolio</title>
+  <meta name="application-name" content="Mohamed | Portfolio">
+  <meta name="apple-mobile-web-app-title" content="Mohamed | Portfolio">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="icons/favicon-256.png">
+
+  <link rel="manifest" href="manifest.json">
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCtxmEqJRjOSOEkh9zOHLVgQN2Vp0-lnA8",
+      authDomain: "portfolio-6b5cc.firebaseapp.com",
+      projectId: "portfolio-6b5cc",
+      storageBucket: "portfolio-6b5cc.firebasestorage.app",
+      messagingSenderId: "13985832794",
+      appId: "1:13985832794:web:5f65228664a16161f09d63",
+      measurementId: "G-4PD4CS399M"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</head>
+
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    window.addEventListener("load", function () {
+      const desiredTitle = "Mohamed | Portfolio";
+      document.title = desiredTitle;
+
+      const t = document.querySelector("title");
+      if (t) {
+        new MutationObserver(() => {
+          if (document.title !== desiredTitle) {
+            document.title = desiredTitle;
+          }
+        }).observe(t, { childList: true, characterData: true, subtree: true });
+      }
+    });
+  </script>
+</body>
+</html>
+
+
